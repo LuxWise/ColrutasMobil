@@ -5,6 +5,7 @@ import CustomButtom from "../../components/customButtom";
 import logo from "../../assets/logo.png";
 import axios from "axios";
 import * as SecureStore from "expo-secure-store";
+import { URL } from "../../constans";
 
 const Login = ({ navigation }) => {
   const [user, setUser] = useState("");
@@ -19,7 +20,7 @@ const Login = ({ navigation }) => {
   }, [user, password]);
 
   const handleLogin = async () => {
-    axios.post("http://10.0.2.2:8080/loginMobile", body).then(async res => {
+    axios.post(`${URL}/loginMobile`, body).then(async res => {
       if (res.data.Status === "exito") {
         await SecureStore.setItemAsync("token", res.data.Token);
         const token = await SecureStore.getItemAsync("token");

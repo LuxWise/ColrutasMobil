@@ -1942,10 +1942,10 @@
     color "^4.2.3"
     warn-once "^0.1.0"
 
-"@rnmapbox/maps@10.0.15":
-  version "10.0.15"
-  resolved "https://registry.yarnpkg.com/@rnmapbox/maps/-/maps-10.0.15.tgz#cf63c8eb6beffb22451718f148c2bea655a3cdb6"
-  integrity sha512-2diBwMF+e7gR6keZ1AEI3xw8U7Cu9+xhv8ce75Bw7flg9aTk+d0KgWv4VDQn4wSphD23EroUgFprVymHvVzZGQ==
+"@rnmapbox/maps@^10.1.13":
+  version "10.1.13"
+  resolved "https://registry.yarnpkg.com/@rnmapbox/maps/-/maps-10.1.13.tgz#6e2899d000315d7d24ae51f0f5982d93657746c5"
+  integrity sha512-eXMHaiZEM2qSVBQe7+pcBAwh8m036JqWusmhi5L89vQVfM4mT82CqUd4XrULE9xBJ5S7mgVU68J9L9Hnt18BCA==
   dependencies:
     "@turf/along" "6.5.0"
     "@turf/distance" "6.5.0"

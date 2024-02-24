@@ -5,21 +5,22 @@ import {
   ScrollView,
   BackHandler,
   SafeAreaView,
-} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import CustomReturn from '../../components/customReturn';
-import ruta from '../../assets/ruta.png';
-import TopMenu from '../../layout/TopMenu';
-import ItemsRutas from '../../components/ItemsRutas';
-import axios from 'axios';
+} from "react-native";
+import React, { useEffect, useState } from "react";
+import CustomReturn from "../../components/customReturn";
+import ruta from "../../assets/ruta.png";
+import TopMenu from "../../layout/TopMenu";
+import ItemsRutas from "../../components/ItemsRutas";
+import axios from "axios";
+import { URL } from "../../constans";
 
-const ListaRutas = ({navigation}) => {
+const ListaRutas = ({ navigation }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+    BackHandler.addEventListener("hardwareBackPress", handleBackButton);
     axios
-      .get('http://10.0.2.2:8080/ruta')
+      .get(`${URL}`)
       .then(response => {
         setData(response.data);
       })
@@ -27,17 +28,17 @@ const ListaRutas = ({navigation}) => {
         console.log(error);
       });
     return () => {
-      BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
+      BackHandler.removeEventListener("hardwareBackPress", handleBackButton);
     };
   }, []);
 
   const handleBackButton = () => {
-    navigation.replace('Home');
+    navigation.replace("Home");
     return true;
   };
 
   const redirict = () => {
-    navigation.replace('Home');
+    navigation.replace("Home");
   };
 
   return (
@@ -54,7 +55,7 @@ const ListaRutas = ({navigation}) => {
         text="Listado de rutas"
       />
       <ScrollView>
-        <View style={{padding: 20, alignItems: 'center'}}>
+        <View style={{ padding: 20, alignItems: "center" }}>
           {data.map(item => (
             <View key={item.id}>
               <ItemsRutas
@@ -77,8 +78,8 @@ export default ListaRutas;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 20,
-    backgroundColor: '#f5f9fc',
+    backgroundColor: "#f5f9fc",
   },
 });
