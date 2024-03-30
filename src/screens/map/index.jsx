@@ -8,7 +8,6 @@ import {
 import React from "react";
 import TopMenu from "../../layout/TopMenu";
 import Icon from "react-native-vector-icons/Feather";
-import Mapbox from "@rnmapbox/maps";
 
 const Map = ({ navigation }) => {
   React.useEffect(() => {
@@ -29,20 +28,7 @@ const Map = ({ navigation }) => {
       <View style={styles.textContainer}>
         <Text style={styles.textHeader}>Mapa</Text>
       </View>
-      <View style={styles.mapConatiner}>
-        <Mapbox.MapView style={styles.map}>
-          <Mapbox.Camera
-            zoomLevel={15}
-            centerCoordinate={[4.602394, -74.148815]}
-            animationMode={"flyTo"}
-            animationDuration={6000}
-          />
-          <Mapbox.PointAnnotation
-            id="marker"
-            coordinate={[4.603966, -74.151879]}
-          />
-        </Mapbox.MapView>
-      </View>
+      <View style={styles.mapConatiner}></View>
     </SafeAreaView>
   );
 };

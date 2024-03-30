@@ -1,1 +1,1 @@
-export const URL = 'https://colrutas-back-production-628d.up.railway.app'
+export const URL = 'https://colrutas-back.up.railway.app'

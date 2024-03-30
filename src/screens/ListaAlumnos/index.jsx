@@ -21,7 +21,7 @@ const ListaAlumnos = ({ navigation }) => {
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", handleBackButton);
     axios
-      .get(`${URL}`)
+      .get(`${URL}/alumnos`)
       .then(response => {
         setData(response.data);
       })

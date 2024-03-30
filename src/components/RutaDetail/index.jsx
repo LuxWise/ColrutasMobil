@@ -2,13 +2,14 @@ import { Image, Modal, StyleSheet, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { URL } from "../../constans";
 
 const RutaDetail = ({ isDetailOpen, setIsDetailOpen, itemId, img }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://10.0.2.2:8080/rutaDetail/${itemId}`)
+      .get(`${URL}/ruta/${itemId}`)
       .then(response => {
         setData(response.data);
       })
@@ -16,6 +17,8 @@ const RutaDetail = ({ isDetailOpen, setIsDetailOpen, itemId, img }) => {
         console.log(error);
       });
   }, []);
+
+  console.log(data);
 
   return (
     <Modal visible={isDetailOpen} transparent={true} animationType="fade">
@@ -46,7 +49,7 @@ const RutaDetail = ({ isDetailOpen, setIsDetailOpen, itemId, img }) => {
                 <Text style={styles.info}>Origen: {item.origen}</Text>
                 <Text style={styles.info}>Placa: {item.placa}</Text>
                 <Text style={styles.info}>Destino: {item.destino}</Text>
-                <Text style={styles.info}>Monitor: {item.monitor}</Text>
+                <Text style={styles.info}>Monitor: {item.Monitor}</Text>
               </View>
             ))}
           </View>

@@ -20,7 +20,7 @@ const ListaRutas = ({ navigation }) => {
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", handleBackButton);
     axios
-      .get(`${URL}`)
+      .get(`${URL}/ruta`)
       .then(response => {
         setData(response.data);
       })

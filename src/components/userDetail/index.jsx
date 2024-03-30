@@ -2,13 +2,14 @@ import { Image, Modal, StyleSheet, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { URL } from "../../constans";
 
 const UserDetail = ({ isDetailOpen, setIsDetailOpen, itemId, img }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://10.0.2.2:8080/alumnosDetail/${itemId}`)
+      .get(`${URL}/alumnos/${itemId}`)
       .then(response => {
         setData(response.data);
       })
@@ -42,7 +43,7 @@ const UserDetail = ({ isDetailOpen, setIsDetailOpen, itemId, img }) => {
           <View style={styles.infoContainer}>
             {data.map(item => (
               <View key={item.id}>
-                <Text style={styles.info}>Acudiente: {item.acudiente}</Text>
+                <Text style={styles.info}>Acudiente: {item.Acudiente}</Text>
                 <Text style={styles.info}>Documento: {item.documento}</Text>
                 <Text style={styles.info}>EPS: {item.eps}</Text>
                 <Text style={styles.info}>Curso: {item.curso}</Text>
