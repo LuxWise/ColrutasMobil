@@ -11,6 +11,7 @@ Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un ent
   - Instalacion de [Andrioid Studio](https://developer.android.com/studio?gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA8XOF12fx3saV92rvqrv7GLW4st23xafwdkVc560tKjIe8MHNnKoicaAjiSEALw_wcB&gclsrc=aw.ds&hl=es-419)
   - Instalacion de [yarn](https://yarnpkg.com/getting-started/install)
   - Instalacion de [git](https://git-scm.com/)
+  - Instalacion de xcode (Solo para mac)
 - Clonación del repositorio.
   - Utilizar el sistema de git para clonar el repositorio, este no incluye los node modules ya que deben ser instalados posteriormente
 - Instalación de dependencias.
@@ -27,14 +28,29 @@ Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un ent
   - Modificar la carpeta constans segun sea nesesario para cambiar el link del backend alojado en railway
 
 ## Uso
-Instrucciones sobre cómo utilizar el proyecto. Esto puede incluir:
+Instrucciones sobre cómo utilizar el proyecto.
 
-- Iniciar la aplicación en un emulador o dispositivo físico.
-- Interacción con las diferentes funcionalidades.
-- Ejemplos de código relevantes.
+- Iniciar la aplicación en un emulador o dispositivo físico, a atrves de expo con los comandos nesesarios
+  ### yarn
+    ```
+    yarn start
+    ```
+  ### npm
+    ```
+    npm run start
+    ```
+- Utilizar la opcion de emulacion ya sea android o IOS (para el uso de IOS es nesesario hacerlo desde una mac o utilizar el Qr de expo desde un Iphone)
+- Realizar el inicio de sesion con alguna de la cuentas creadas desde la web
 
 ## Estructura del Proyecto
 Descripción de la estructura de archivos y carpetas del proyecto. Esto puede incluir una descripción de la función de cada archivo importante (componentes, pantallas, utilidades, etc.).
+
+- Screens
+  Contiene todas las pantallas disponibles en el front mobil y el como estas estan dividias para su funcionamiento
+- components
+  Contiene los componentes como botones, inputs, cajas y complementos que se emplean dentro de la carpeta de Screens
+- assets
+  Contiene todas las imagenes que se utilizan dentro de la cerpeta Screens
 
 ## Dependencias
 
@@ -61,14 +77,5 @@ Descripción de la estructura de archivos y carpetas del proyecto. Esto puede in
 - **react-native-vector-icons**: ^10.0.3
 
 ## Problemas Conocidos
-Lista de problemas conocidos o limitaciones del proyecto, junto con posibles soluciones o formas de mitigarlos.
-
-## Contacto
-Información de contacto del equipo de desarrollo o mantenimiento del proyecto. Esto puede incluir direcciones de correo electrónico, enlaces a redes sociales, etc.
-
-## Licencia
-Declaración de la licencia bajo la cual se publica el proyecto.
-
----
-
-Este es solo un esquema básico y puedes expandirlo o modificarlo según las necesidades específicas de tu proyecto. ¡Espero que te sea útil!
+Lista de problemas conocidos o limitaciones del proyecto
+- Uso de mapa mapbox, actualmete el mapa de mapbox no es posible utilizarlo dentro las versiones de prueba con expo. Para esto se recomienda hacer el compilado de la aplicacion o realizar un build con [Metro](https://reactnative.dev/docs/metro)
