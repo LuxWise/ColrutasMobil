@@ -4,12 +4,27 @@
 Breve descripción del proyecto, su propósito y funcionalidades principales.
 
 ## Instalación
-Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un entorno local. Esto puede incluir:
+Instrucciones detalladas sobre cómo instalar y configurar el proyecto en un entorno local
 
-- Requisitos previos (Node.js, npm, React Native CLI, etc.).
+- Requisitos previos
+  -- Instalacion de Nodejs en su version 18 como minimo, se recomienda la version LTS
+  -- Instalacion de [Andrioid Studio](https://developer.android.com/studio?gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA8XOF12fx3saV92rvqrv7GLW4st23xafwdkVc560tKjIe8MHNnKoicaAjiSEALw_wcB&gclsrc=aw.ds&hl=es-419)
+  -- Instalacion de [yarn](https://yarnpkg.com/getting-started/install)
+  -- Instalacion de [git](https://git-scm.com/)
 - Clonación del repositorio.
+  -- Utilizar el sistema de git para clonar el repositorio, este no incluye los node modules ya que deben ser instalados posteriormente
 - Instalación de dependencias.
-- Configuración específica del entorno (variables de entorno, archivos de configuración, etc.).
+
+  Estabdo ubicados en la carpeta raiz utilizar el comando de yarn o de npm en la terminal para instalar las dependencias
+  ```
+  yarn 
+  ```
+  ```
+  npm install
+  ```
+- Configuración específica del entorno
+  -- Crear las viables de entorno dentro de la carpeta raiz nombrandola como .env
+  -- Modificar la carpeta constans segun sea nesesario para cambiar el link del backend alojado en railway
 
 ## Uso
 Instrucciones sobre cómo utilizar el proyecto. Esto puede incluir:
